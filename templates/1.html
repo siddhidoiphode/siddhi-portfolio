@@ -1,0 +1,304 @@
+
+
+
+{% comment %} 
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery & Documentation</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #222;
+            border-bottom: 3px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .gallery img.zoomed {
+            transform: scale(2);  /* Adjust this to how much you want to zoom */
+            z-index: 9999;
+        }
+        .upload-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .upload-section input {
+            display: block;
+            margin: auto;
+            padding: 10px;
+        }
+        .video-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        video {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Photo Gallery</h1>
+        <div class="gallery">
+            <img id="menuImage" src="{% static 'images/gallery/menu.png' %}" alt="menu" class="thumbnail">
+            <img src="{% static 'images/gallery/Tables.png' %}" alt="Tables">
+            <img src="{% static 'images/gallery/img3.jpg' %}" alt="Gallery Image 3">
+            <img src="{% static 'images/gallery/img4.jpg' %}" alt="Gallery Image 4">
+            <img src="{% static 'images/gallery/menu.png' %}" alt="menu">
+            <img src="{% static 'images/gallery/Tables.png' %}" alt="Tables">
+        </div>
+
+        <div class="upload-section">
+            <h2>Upload New Photos</h2>
+            <input type="file" accept="image/*">
+        </div>
+
+        <div class="video-section">
+            <h2>Project Overview Video</h2>
+            <video controls>
+                <source src="{% static 'videos/demo.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        // Get all images in the gallery
+        var images = document.querySelectorAll('.gallery img');
+
+        // Add click event for zooming
+        images.forEach(function(image) {
+            image.addEventListener('click', function(event) {
+                // If the image is already zoomed, remove the zoom
+                if (image.classList.contains('zoomed')) {
+                    image.classList.remove('zoomed');
+                } else {
+                    // Zoom the image
+                    images.forEach(function(img) {
+                        img.classList.remove('zoomed');  // Remove zoom from all images
+                    });
+                    image.classList.add('zoomed');
+                }
+                event.stopPropagation();  // Prevent click event from bubbling up to the window
+            });
+        });
+
+        // Close zoom effect when clicking anywhere else
+        window.addEventListener('click', function() {
+            images.forEach(function(image) {
+                image.classList.remove('zoomed');  // Remove zoom effect from all images
+            });
+        });
+    </script>
+</body>
+</html> {% endcomment %}
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery & Documentation</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color:rgb(246, 195, 56);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .button:hover {
+            background-color:rgb(251, 182, 32); /* Blue color */
+
+            {% comment %} background-color: #007bff; /* Blue color */ {% endcomment %}
+
+        }
+        
+        .button:active {
+            background-color:rgb(12, 112, 234);
+            transform: scale(0.98);
+        }
+
+         
+        
+        /* Center the content vertically and horizontally */
+        body {
+            margin: 0;
+            min-height: 100vh;          /* Full viewport height */
+            display: flex;
+            justify-content: center;    /* Horizontal centering */
+            align-items: center;        /* Vertical centering */
+            background: #f0f2f5;        /* Light background for contrast */
+        }
+
+        /* Container for the heading and link */
+        .link-container {
+            text-align: center;
+        }
+
+        /* Style the heading */
+        h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+        }
+
+        /* Link styling */
+        a {
+            text-decoration: none;
+            color: #1e90ff;
+            position: relative;
+            padding: 12px 24px;         /* Larger click area */
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1.1em;
+            border-radius: 8px;         /* Rounded corners */
+            background: #ffffff;         /* White background */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, #1e90ff, #ff007f);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        a:hover {
+            color: #ff007f;
+            transform: translateY(-3px); /* Bigger lift effect */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        a:active {
+            box-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+            transform: translateY(1px);
+        }
+        
+        div.link-container {
+            text-align: center;
+            margin-top: 1px !important; /* !important ensures it overrides other rules */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+  
+     
+
+
+
+    <div class="container">
+
+        <div class="link-container" style="margin-top:1px;">
+            <h4>Click here to visit the project</h4>
+            <a href="#" style="color:rgb(41, 159, 237); margin-right:90px;" >Project Link</a>
+            <a href="#" style="color:rgb(41, 159, 237);">GitHub  Link</a>
+         </div>
+     
+         
+        <h1>Photo Gallery</h1>
+        <div class="gallery">
+            <img id="menuImage" src="{% static 'images/gallery/menu.png' %}" alt="menu" class="thumbnail">
+            <img src="{% static 'images/gallery/Tables.png' %}" alt="Tables">
+            <img src="{% static 'images/gallery/Orders in kitchen.png' %}" alt="orders">
+    
+
+        </div>
+
+ 
+        <div class="upload-section">
+            
+            <a href="{% url 'emenuPresentation' %}" target="_blank" class="button smooth-scroll" style="font-size: 14px; margin-right:90px;">
+                View Presentation
+             </a>
+
+             <a href="{% url 'emenuReport' %}" target="_blank" class="button smooth-scroll" style="font-size: 14px;">
+                View Documentation
+             </a>
+
+           
+        </div>
+    
+
+
+     
+        {% comment %} <div class="video-section">
+            <h2>Project Overview Video</h2>
+            <video controls>
+                <source src="{% static 'videos/demo.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div> {% endcomment %}
+
+    <script src="{% static 'js/script.js' %}">
+
+     
+        
+    </script>
+</body>
+</html>

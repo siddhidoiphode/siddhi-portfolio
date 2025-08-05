@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery & Documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+
+    <!-- ====== Google Fonts ====== -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        /* Existing global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f2f5;
+        }
+
+        .link-container {
+            text-align: center;
+            margin-top: 1px !important;
+        }
+
+        h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+        }
+
+        /* Link styling for PowerBI App Link */
+        a {
+            text-decoration: none;
+            color: #1e90ff;
+            position: relative;
+            padding: 12px 24px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1.1em;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-right: 90px; /* Match your inline style */
+            margin-bottom: 55px !important; /* Match your inline style */
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, #1e90ff, #ff007f);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        a:hover {
+            color: #ff007f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        a:active {
+            box-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+            transform: translateY(1px);
+        }
+
+        /* Original button class (if needed elsewhere) */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: rgb(246, 195, 56); /* Yellow color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: rgb(251, 182, 32); /* Lighter yellow */
+        }
+
+        .button:active {
+            background-color: rgb(12, 112, 234); /* Blue color */
+            transform: scale(0.98);
+        }
+
+        /* New class for Documentation and Presentation buttons */
+        .doc-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #4CAF50; /* Green color for distinction */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin-right: 90px; /* Match your layout */
+        }
+
+        .doc-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .doc-button:active {
+            background-color: #3d8b40; /* Even darker green when clicked */
+            transform: scale(0.98);
+        }
+
+        /* Gallery styling (if needed, adjust based on your needs) */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 55px; /* Match your inline style */
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .gallery img.zoomed {
+            transform: scale(2);
+            z-index: 9999;
+        }
+
+
+        .upload-section a.doc-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+    margin-right: 90px; /* Match layout */
+}
+
+/* Only apply zoom-in on hover inside .upload-section */
+.upload-section a.doc-button:hover {
+    transform: scale(1.1);
+}
+
+/* Ensure no other effects interfere */
+.upload-section a.doc-button:active {
+    transform: scale(1.1);
+}
+
+
+        
+    </style>
+</head>
+<body>
+  <div class="container">
+        <div class="link-container" style="margin-top: 1px;">
+            <h4>Click here to visit the Dashboard (You must have PowerBI Account)</h4>
+            <a href="https://app.powerbi.com/groups/me/apps/4fa03092-c5a5-45c2-8668-8e4ff7e459ae/reports/9f418a9d-4db3-4499-a40e-23e35d28b4c4/e01f3d4b07ebb8512ccc?ctid=d5a5bc6c-445a-466b-b594-ebec01161801&experience=power-bi" style="color: rgb(41, 159, 237);">PowerBI App Link</a>
+             <a href="https://github.com/siddhidoiphode/SuperMarketSalesDashboard" style="color: rgb(41, 159, 237);">GitHub Link</a> 
+        </div> 
+
+        <h1>Photo Gallery</h1>
+        <div class="gallery">
+            <img id="menuImage" src="{% static 'images/gallery/supermarketsales1.png' %}" alt="menu" class="thumbnail">
+            <img id="menuImage" src="{% static 'images/gallery/supermarketsales2.png' %}" alt="menu" class="thumbnail">
+           <img id="menuImage" src="{% static 'images/gallery/Ecommerse.png' %}" alt="menu" class="thumbnail"> 
+    
+        </div>
+
+
+
+
+
+
+        <div class="upload-section">
+            <a href="{% url 'emenuPresentation' %}" target="_blank" class="doc-button" style="font-size: 14px;">
+                View Presentation
+            </a>
+            <a href="{% url 'emenuReport' %}" target="_blank" class="doc-button" style="font-size: 14px;">
+                View Documentation
+            </a>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,1247 @@
+{% load static %}
+<!-- {% comment %} {% load messages %} {% endcomment %} -->
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8"> 
+    <title>Portfolio</title>
+
+    <!-- ====== Google Fonts ====== -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+
+    <!-- ====== ALL CSS ====== -->
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.csss' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5% 10%;
+      min-height: 80vh;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 span {
+      font-weight: bold;
+      color: #9145e0;
+    }
+
+    .hero-text p {
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+
+    .btn-dark {
+      background-color: #555;
+      color: white;
+    }
+
+    .btn-outline {
+      border: 2px solid #9145e0;
+      color: #9145e0;
+    }
+
+    .socials {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: #555;
+      font-size: 1.2rem;
+    }
+
+    .hero-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+
+        <!-- ====== Header ====== -->
+    <header id="header" class="header">
+        <!-- ====== Navbar ====== -->
+        <nav class="navbar navbar-expand-lg fixed-top" style="background: rgb(0, 0, 0); height: 9%; ">
+
+   
+                       <span class="navbar-brand logo"  style="color:#f8f4e8; margin-top: 2px; margin-left:25px; "> SIDDHI DOIPHODE</span>
+                    
+                <!-- Logo -->
+                  
+
+                <!-- // Logo -->    
+
+                <!-- Mobile Menu -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false"><span><i class="fa fa-bars"></i></span></button>
+                <!-- Mobile Menu -->
+
+                <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent" style=" margin-top: 2px;"  >
+                    <ul class="navbar-nav ml-auto" style=" margin-top: 2px;">
+                        <li class="nav-item active"><a class="nav-link" href="#home">HOME</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="#technologies">TECHNOLOGIES</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="#service">SERVICE</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">WORK</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#blog">BLOG</a></li>
+                        <li class="nav-item"><a class="nav-link pr0" href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>  
+            </div>
+        </nav>
+        <!-- ====== // Navbar ====== -->
+    </header>
+
+    <!-- ====== //Featured Area ====== -->
+
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5% 10%;
+      min-height: 80vh;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h1 span {
+      font-weight: bold;
+      /* color: #9145e0; */
+      color : #ffc107;
+    }
+
+    .hero-text p {
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+
+    .btn-dark {
+      background-color: #555;
+      color: white;
+    }
+
+    .btn-outline {
+      border: 2px solid #9145e0;
+      color: #9145e0;
+    }
+
+    .socials {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: #555;
+      font-size: 1.2rem;
+    }
+
+    .hero-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <section id="home"class="hero">
+
+       <div class="hero-img">
+      <!-- <img src="./106ffd3b-0c54-4d09-8bae-304b4886ab2d.png" alt="Siddhi"> -->
+      <img src="{% static 'images/sid4.png' %}" alt="sid4" style="padding-left: 5px; height: 550px; width: 450px;">
+      </div>
+
+    
+    <div class="hero-text">
+      <h1>Hi, I'm Siddhi Doiphode!<br><span>WEB DEVELOPER</span></h1>
+      <p>I specialize in building dynamic web applications using Django, Python, and Tailwind CSS, ensuring seamless functionality and a great user experience. With a strong passion for data analysis, I work with Power BI to extract insights and make data-driven decisions.</p>
+      <div class="buttons">
+
+
+
+
+
+<div class="cta-container">
+  <div class="buttons">
+    <a href="#projects" class="btn-dark">PROJECTS &#x3C;/&#x3E;</a>
+    <a href="{% static 'resume/SiddhiResume.pdf' %}" class="btn-outline" target="_blank"> My Resume &#x2197;</a>
+  </div>
+
+  
+  <div class="socials">
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/siddhi-doiphode-85285a287/" target="_blank" title="LinkedIn">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="height: 28px; margin-right: 15px;">
+  </a>
+
+  <!-- HackerRank -->
+  <a href="https://www.hackerrank.com/profile/siddhidoiphode21" target="_blank" title="HackerRank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png" alt="HackerRank" style="height: 32px; margin-right: 15px; vertical-align: middle;">
+  </a>
+
+  <!-- Microsoft Learn -->
+  <a href="https://learn.microsoft.com/en-us/users/siddhidoiphode-5138/" target="_blank" title="Microsoft Learn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" style="height: 28px; margin-right: 15px;">
+  </a>
+
+  <!-- GitHub -->
+  <a href="https://github.com/siddhidoiphode" target="_blank" title="GitHub">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="height: 28px; margin-right: 15px;">
+  </a>
+
+  <!-- LeetCode -->
+  <a href="https://leetcode.com/u/SiddhiDoiphode/" target="_blank" title="LeetCode">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" style="height: 32px; margin-right: 15px; vertical-align: middle;">
+  </a>
+
+</div>
+
+
+
+
+</div>
+
+
+
+  </section>
+
+
+
+<section class="pb-70 bg-img fact-counter" id="counter" style="height:10px;background-image: url(' {% static "images/fan-fact-bg.jpg" %}')">
+    </section>
+
+    <section id="technologies" class="section-padding pb-70">
+
+
+<!-- Technologies Section -->
+<!-- <section class="tech-section"> -->
+                 <div class="section-title text-center">
+                        <h2>Technologies</h2>
+                    </div>
+
+
+  <!-- <h2>Technologies & Frameworks</h2> -->
+  <div class="tech-container">
+    <div class="tech-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
+      <p>Django</p>
+    </div>
+    <div class="tech-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <p>Python</p>
+    </div>
+    <div class="tech-card">
+      <img src="https://img.icons8.com/color/96/000000/microsoft-excel-2019--v1.png" alt="Excel">
+      <p>Excel</p>
+    </div>
+    <div class="tech-card">
+      <img src="https://img.icons8.com/color/96/000000/power-bi.png" alt="Power BI">
+      <p>Power BI</p>
+    </div>
+    <!-- <div class="tech-card">
+      <img src="https://img.icons8.com/ios-filled/100/monitor--v1.png" alt="C (Basics)">
+      <p>C (Basics)</p>
+    </div> -->
+    <div class="tech-card">
+      <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS"> -->
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS">
+
+      <p>Tailwind CSS</p>
+    </div>
+    <!-- <div class="tech-card">
+      <img src="https://img.icons8.com/ios-filled/100/data-configuration.png" alt="Data Analysis">
+      <p>Data Analysis</p>
+    </div> -->
+    <div class="tech-card">
+      <img src="https://img.icons8.com/color/96/000000/canva.png" alt="Canva">
+      <p>Canva</p>
+    </div>
+    <div class="tech-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+      <p>HTML5</p>
+    </div>
+    <div class="tech-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+      <p>React</p>
+    </div>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+.tech-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 cards per row */
+  gap: 30px;
+  max-width: 90%;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.tech-card {
+  background-color: #fff;
+  padding: 30px 15px;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  width: 100%; /* Stretch to grid cell */
+  text-align: center;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tech-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.tech-card p {
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Responsive behavior */
+@media (max-width: 1023px) {
+  .tech-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards on medium screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .tech-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards on small screens */
+  }
+}
+
+@media (max-width: 479px) {
+  .tech-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 card on phones */
+  }
+}
+</style>
+
+
+
+
+
+
+
+    
+    <!-- ====== // About Area ====== -->
+
+
+    <!-- ====== Service Section ====== -->
+    <section id="service" class="section-padding pb-70 service-area bg-light">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="section-title text-center">
+                        <h2>Service</h2>
+                        {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <!-- //Section Title -->
+
+            <div class="row">
+                <!-- Single Service -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="fa fa-code"></i>
+                        </div>
+                        <h2>Web Development</h2>
+                        <p>Experienced in building responsive, user-friendly, and scalable web applications. Skilled in front-end and back-end development and performance optimization to ensure seamless functionality and security.</p>
+                    </div>
+                </div>
+                <!-- //Single Service -->
+                <!-- Single Service -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="fa fa-chart-area"></i>
+                        </div>
+                        <h2> Data Analysis</h2>
+                        <p>Experienced in transforming raw data into actionable insights using advanced analytics and visualization. Proficient in Python, SQL, Power BI to drive data-driven decision-making.</p>
+                    </div>
+                </div>
+                <!-- //Single Service -->
+                <!-- Single Service -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-service">
+                        <div class="service-icon">
+                            <i class="fa fa-chart-line"></i>
+                        </div>
+                        <h2>Blog Writing</h2>
+                        <p>Experienced in creating engaging and SEO-optimized blog content using WordPress. Skilled in content strategy, keyword research, and audience engagement to enhance online presence.</p>
+                    </div>
+                </div> 
+                <!-- //Single Service -->
+            </div>
+
+        </div>
+    </section>
+    <!-- ====== //Service Section ====== -->
+
+    
+    <section class="pb-70 bg-img fact-counter" id="counter" style="height:10px;background-image: url(' {% static 'images/fan-fact-bg.jpg' %}')">
+    </section>
+  
+    <!-- ====== //Why choose Me Section ====== -->
+    <section class="pb-70 bg-img fact-counter" id="counter" style="height:10px;background-image: url(' {% static 'images/fan-fact-bg.jpg' %}')">
+    </section>
+    <!-- ====== Portfolio Section ====== -->
+    <section id="projects" class="section-padding pb-85 portfolio-area bg-light">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="section-title text-center">
+                        <h2>Recent Work</h2>
+                        {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <!-- //Section Title -->
+            <div class="row justify-content-center">
+                <!-- Work List Menu-->
+                <div class="col-lg-8">
+                    <div class="work-list text-center">
+                        <ul>
+                            <li class="filter" class="active" data-filter="all">ALL</li>
+                            <li class="filter" data-filter=".web">Web Development</li>
+                            <li class="filter" data-filter=".data">Data Analysis</li>
+                            <li class="nav-link" href="#blog"> Wordpress blogs </li>
+                          
+                        </ul>
+                    </div>
+                </div>
+                <!-- // Work List Menu -->
+            </div>
+            <div class="row portfolio">
+               <!-- Single Portfolio -->
+
+
+                {% comment %}   WEB DEVELOPMENT  {% endcomment %}
+         
+
+                <div class="col-lg-4 col-md-6 mix web">
+                    <div class="single-portfolio" style="background-image: url('{% static 'images/portfolio/CarnivalRegistration.jpg' %}')">
+
+                        <div class="portfolio-icon text-center">
+                            <a href="{% url 'webCarnival' %}">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="portfolio-hover">
+                            <h4> <span>Carnival Registration System</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+               {% comment %}   WEB DEVELOPMENT  {% endcomment %}
+
+                <div class="col-lg-4 col-md-6 mix web">
+
+                    <div class="single-portfolio" style="background-image: url('{% static 'images/portfolio/emenu.png' %}')">
+
+                        <div class="portfolio-icon text-center">
+                            <a href="{% url 'webEmenu' %}">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="portfolio-hover">
+                            <h4> <span>Emenu- A Digital Food Ordering System</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+
+
+              {% comment %}     DATA ANALYSIS  {% endcomment %}
+
+
+                <div class="col-lg-4 col-md-6 mix data ">   
+                    <div class="single-portfolio" style="background-image: url('{% static 'images/portfolio/mishra.jpg' %}')">
+                        <div class="portfolio-icon text-center">
+                            <a href="{% url 'webEcommerceSalesDashboard' %}">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="portfolio-hover">
+                            <h4> <span>Ecommerce sales Dashboard</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-lg-4 col-md-6 mix data">   
+                    <div class="single-portfolio" style="background-image: url('{% static 'images/portfolio/supermarketsales.png' %}')">
+                        <div class="portfolio-icon text-center">
+                            <a href="{% url 'SupermarketSalesDashboard' %}">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="portfolio-hover">
+                            <h4> <span>Supermarket sales Dashboard</span></h4>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                    
+
+               
+              
+            </div>
+        </div>
+    </section>
+    <!-- ====== // Portfolio Section ====== -->
+
+    <!-- ====== // Frequently asked questions ====== -->
+    <section class="pb-70 bg-img fact-counter" id="counter" style="height:10px;background-image: url(' {% static "images/fan-fact-bg.jpg" %}')">
+    </section>
+
+
+
+
+
+    <!-- ====== Blog Section ====== -->
+
+    <section id="blog" class="section-padding pb-70 blog-section bg-light">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="section-title text-center">
+                        <h2>Blog Area</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- //Section Title -->
+            <div class="row">
+
+
+                <!-- Single Blog -->
+                <div class="col-lg-4 col-md-6">    
+                    <div class="single-blog">
+                        <!-- <div class="blog-thumb" style="background-image: url({% static 'images/blog/blog1.png' %});"></div> -->
+                        <div class="blog-thumb" style="background-image: url('{% static 'images/blog/blog1.jpg' %}')"></div>
+
+                        <h4 class="blog-title"><a href="single-blog.html">Extract Text from Image Using Python</a></h4>
+                        {% comment %} <p class="blog-meta"><a href="#">AL Mamun</a>, 22 FEB 2018</p> {% endcomment %}
+                       {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque similique velit, officiis non.</p> {% endcomment %}
+                        <a href="https://coderspacket.com/posts/extract-text-from-an-image-using-python/" class="button">Read More</a>
+                    </div>
+                </div>
+                <!-- Single Blog -->
+
+
+                <!-- Single Blog -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog">
+                        <!-- <div class="blog-thumb" style="background-image: url('{% static 'images/blog/blog3.jpg' %}')"></div> -->
+                        <div class="blog-thumb" style="background-image: url('{% static 'images/blog/blog2.jpg' %}')"></div>
+
+                        {% comment %} <div class="blog-thumb" style="background-image: url(assets/images/blog/img-2.jpg)"></div> {% endcomment %}
+                        <h4 class="blog-title"><a href="single-blog.html">Rotate PDF using Python</a></h4>
+                        {% comment %} <p class="blog-meta"><a href="#">AL Mamun</a>, 22 FEB 2018</p> {% endcomment %}
+                        {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque similique velit, officiis non.</p> {% endcomment %}
+                        <a href="https://coderspacket.com/posts/rotate-pdf-files-with-python/" class="button">Read More</a>
+                    </div>
+                </div>
+
+
+                <!-- Single Blog -->
+                <!-- Single Blog -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog">
+                        {% comment %} <div class="blog-thumb" style="background-image: url(assets/images/blog/img-3.jpg)"></div> {% endcomment %}
+                        <div class="blog-thumb" style="background-image: url('{% static 'images/blog/blog3.png' %}')"></div>
+
+                        <h4 class="blog-title"><a href="single-blog.html">Uploading System</a></h4>
+                        {% comment %} <p class="blog-meta"><a href="#">AL Mamun</a>, 22 FEB 2018</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque similique velit, officiis non.</p> {% endcomment %}
+                        <a href="https://coderspacket.com/posts/uploading-system-using-python/#google_vignette" class="button">Read More</a>
+                    </div>
+                </div>
+                <!-- Single Blog -->
+            </div>
+        </div>
+    </section>
+    <!-- ====== // Blog Section ====== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <section class="pb-70 bg-img fact-counter" id="counter" style="height:10px;background-image: url(' {% static 'images/fan-fact-bg.jpg' %}')">
+    </section>
+
+    <!-- ====== Testimonial Section ====== -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <!-- ====== // Testimonial Section ====== -->
+
+    <!-- ====== Team Section ====== -->
+   {% comment %}  <section class="section-padding pb-70 team-area">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="section-title text-center">
+                        <h2>Team</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- //Section Title -->
+            <div class="row">
+                <!-- Single Team -->
+                <div class="col-lg-3 col-md-4 col-sm-6">        
+                    <div class="single-team">
+                        <div class="team-thumb" style="background-image: url('{% static 'images/team/img-1.jpg' %}')">
+                            <div class="team-social">
+                                <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h4>AL Mamun</h4>
+                            <span>CEO Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- // Single Team -->
+                <!-- Single Team -->
+                <div class="col-lg-3 col-md-4 col-sm-6">  
+                    <div class="single-team">
+                        <div class="team-thumb" style="background-image: url('{% static 'images/team/img-2.jpg' %}')">
+                            <div class="team-social">
+                                <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h4>AL Mamun</h4>
+                            <span>CEO Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- // Single Team -->
+                <!-- Single Team -->
+                <div class="col-lg-3 col-md-4 col-sm-6">  
+                    <div class="single-team">
+                        <div class="team-thumb" style="background-image: url('{% static 'images/team/img-3.jpg' %}')">
+                            <div class="team-social">
+                                <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h4>AL Mamun</h4>
+                            <span>CEO Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- // Single Team -->
+                <!-- Single Team -->
+                <div class="col-lg-3 col-md-4 col-sm-6">    
+                    <div class="single-team">
+                        <div class="team-thumb" style="background-image: url('{% static 'images/team/img-4.jpg' %}')">
+                            <div class="team-social">
+                                <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h4>AL Mamun</h4>
+                            <span>CEO Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- // Single Team -->
+            </div>
+        </div> 
+    </section>{% endcomment %}
+    <!-- ====== // Team Section ====== -->
+
+
+    <!-- ====== Call to Action Area ====== -->
+    {% comment %} <section class="section-padding call-to-action-aria bg-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9    ">
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla fugit optio voluptatem modi, nemo, cupiditate vel, aspernatur, quae consequatur officia unde totam.</p>
+                </div>
+                <div class="col-lg-3">
+                    <div class="cta-button">
+                        <div class="d-table">
+                            <div class="d-table-cell">
+                                <a href="#contact" class="button">Contact me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> {% endcomment %}
+    <!-- ====== // Call to Action Area ====== -->
+
+
+    <!-- ====== Pricing Area ====== -->
+    {% comment %} <section class="section-padding pb-70 pricing-area">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="section-title text-center">
+                        <h2>Pricing Area</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- //Section Title -->
+            <div class="row">
+                <!-- Single Price Box -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-price-box text-center">
+                        <div class="price-head">
+                            <h2>Basic</h2>
+                            <h3>$99<span>/ Per Month</span></h3>
+                        </div>
+                        <ul>
+                            <li>Basic Feature</li>
+                            <li>Best Output</li>
+                            <li>Free Update</li>
+                            <li>Live chat</li>
+                        </ul>
+                        <a href="#" class="button">PURCHASE NOW</a>
+                    </div>
+                </div>
+                <!-- // Single Price Box -->
+                <!-- Single Price Box -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-price-box text-center">
+                        <div class="price-head">
+                            <h2>Premium</h2>
+                            <h3>$119<span>/ Per Month</span></h3>
+                        </div>
+                        <ul>
+                            <li>Basic Feature</li>
+                            <li>Best Output</li>
+                            <li>Free Update</li>
+                            <li>Live chat</li>
+                        </ul>
+                        <a href="#" class="button">PURCHASE NOW</a>
+                    </div>
+                </div>
+                <!-- // Single Price Box -->
+                <!-- Single Price Box -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-price-box text-center">
+                        <div class="price-head">
+                            <h2>Enterprise</h2>
+                            <h3>$559<span>/ Per Month</span></h3>
+                        </div>
+                        <ul>
+                            <li>Basic Feature</li>
+                            <li>Best Output</li>
+                            <li>Free Update</li>
+                            <li>Live chat</li>
+                        </ul>
+                        <a href="#" class="button">PURCHASE NOW</a>
+                    </div>
+                </div>
+                <!-- // Single Price Box -->
+                <!-- Single Price Box -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-price-box text-center">
+                        <div class="price-head">
+                            <h2>Business</h2>
+                            <h3>$999<span>/ Per Month</span></h3>
+                        </div>
+                        <ul>
+                            <li>Basic Feature</li>
+                            <li>Best Output</li>
+                            <li>Free Update</li>
+                            <li>Live chat</li>
+                        </ul>
+                        <a href="#" class="button">PURCHASE NOW</a>
+                    </div>
+                </div>
+                <!-- // Single Price Box -->
+            </div>
+        </div>
+    </section> {% endcomment %}
+    <!-- ====== // Pricing Area ====== -->
+
+
+    <!-- ====== Contact Area ====== -->
+    <section id="contact" class="section-padding contact-section bg-light">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="section-title text-center">
+                        <h2>Contact Me</h2>
+                        {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <!-- //Section Title -->
+
+            <!-- Contact Form -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Form -->
+                    {% comment %} <form id="contact-form" action="mail.php" method="post" class="contact-form bg-white"> {% endcomment %}
+
+                    {% comment %} <form id="contact-form" action="{% url 'contact' %}" method="post" class="contact-form bg-white"> {% endcomment %}
+
+                    <form id="contact-form" class="contact-form bg-white">
+
+                            {% csrf_token %}
+                        
+                        <div class="row">
+                            <div class="col-lg-6 form-group">
+                                <input type="text" class="form-control" name="name" required placeholder="Name">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <input type="email" class="form-control" name="email" required placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" required placeholder="Subject">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="message" id="" class="form-control" required placeholder="Message"></textarea>
+                        </div>
+                        <div class="form-btn text-center">
+                            <button class="button" type="submit">Send Message</button>
+
+
+<!-- 
+                            {% comment %} {% if messages %}
+                            <div id="message-box">
+                              {% for message in messages %}
+                                <div class="alert {{ message.tags }}">{{ message }}</div>           
+                              {% endfor %}
+                            </div>
+                          {% endif %}
+                           {% endcomment %}
+
+
+
+                           
+
+                            {% comment %} <p class="form-message"></p> {% endcomment %} -->
+                        </div>
+                    </form>
+                    <!-- // Form -->
+                </div>
+            </div>
+            <!-- // Contact Form -->
+        </div>
+    </section>
+
+                  
+
+    <div id="popup-message" style="
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 9999;
+">
+    Email sent successfully!
+</div>
+
+    <!-- ====== // Contact Area ====== -->
+
+    <!-- ====== Footer Area ====== -->
+     
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="copyright-text">
+                        <!-- <p class="text-white">&copy; 2018 <a href="https://www.begindot.com/">A Template Designed by Begindot</a></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    <!-- ====== // Footer Area ====== -->
+
+
+
+
+
+    <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/lightbox.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/typed.js' %}"></script>
+    <script src="{% static 'js/skill.bar.js' %}"></script>
+    <script src="{% static 'js/fact.counter.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+
+<style>
+
+
+    /* Make contact section mobile responsive */
+    @media (max-width: 768px) {
+      .contact-form {
+        padding: 10px !important;
+        margin: 10px auto !important;
+        width: 110% !important;
+        box-shadow: none !important;
+      }
+    
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 16px;
+        width: 100% !important;
+      }
+    
+      .contact-form textarea {
+        resize: vertical;
+      }
+    
+      .contact-form button,
+      .contact-form input[type="submit"] {
+        width: 100% !important;
+        font-size: 16px;
+      }
+    
+      .col-lg-10 {
+        padding: 0 !important;
+        margin: 0 auto !important;
+      }
+    
+      body {
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+      }
+    
+    }
+    
+      
+
+    .alert {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      animation: fadeOut 3s ease-in-out forwards;
+    }
+  
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+  
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
+  </style>
+
+
+<script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contact-form");
+        const popup = document.getElementById("popup-message");
+        const submitBtn = form.querySelector('button[type="submit"]');
+        let isSending = false;
+
+
+    
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+    
+            if (isSending) return;
+            isSending = true;
+            submitBtn.disabled = true;
+    
+            const formData = new FormData(form);
+    
+            popup.innerText = "📤 Sending email...";
+            popup.style.backgroundColor = "#007bff";
+            popup.style.display = "block";
+    
+            fetch("{% url 'contact' %}", {
+                method: "POST",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest",
+                    "X-CSRFToken": formData.get("csrfmiddlewaretoken")
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                popup.innerText = data.message || "✅ Email sent successfully!";
+                popup.style.backgroundColor = data.status === "success" ? "#28a745" : "#dc3545";
+    
+                if (data.status === "success") {
+                    form.reset();
+                }
+    
+                setTimeout(() => {
+                    popup.style.display = "none";
+                    isSending = false;
+                    submitBtn.disabled = false;
+                }, 3000);
+            })
+            .catch(() => {
+                popup.innerText = "❌ Failed to send email!";
+                popup.style.backgroundColor = "#dc3545";
+    
+                setTimeout(() => {
+                    popup.style.display = "none";
+                    isSending = false;
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>
+
