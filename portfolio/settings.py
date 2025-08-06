@@ -196,12 +196,28 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'siddhidoiphode2022@gmail.com'
-EMAIL_HOST_PASSWORD = 'teuz fcvk qqyd ubnt'
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS') == 'True'
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-print("ALLOWED_HOSTS in settings.py =", ALLOWED_HOSTS)
+MAILBOXLAYER_API_KEY = os.getenv('MAILBOXLAYER_API_KEY')
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'siddhidoiphode2022@gmail.com'
+# EMAIL_HOST_PASSWORD = 'teuz fcvk qqyd ubnt'
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# print("ALLOWED_HOSTS in settings.py =", ALLOWED_HOSTS)
+

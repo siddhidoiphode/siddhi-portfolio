@@ -49,6 +49,9 @@ urlpatterns = [
     path('webEcommerceSalesDashboard/', views.webEcommerceSalesDashboard, name='webEcommerceSalesDashboard'),
     path('SupermarketSalesDashboard/', views.SupermarketSalesDashboard, name='SupermarketSalesDashboard'),
     path('contact/', views.contact_view, name='contact'),
+    path('verify-email/', views.verify_email, name='verify_email'),
+    
+
 ]
 
 

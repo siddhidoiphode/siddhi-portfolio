@@ -1,6 +1,313 @@
 
 
 
+<!-- *****************************************88 email validation *************************************************************************** -->
+
+
+<!-- ====== Contact Area ====== -->
+<section id="contact" class="section-padding contact-section bg-light">
+  <div class="container">
+    <!-- Section Title -->
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="section-title text-center">
+          <h2>Contact Me</h2>
+        </div>
+      </div>
+    </div>
+    <!-- // Section Title -->
+
+
+<form id="contact-form" class="contact-form bg-white" method="POST" action="{% url 'contact' %}">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-lg-6 form-group">
+      <input type="text" class="form-control" name="name" required placeholder="Name">
+    </div>
+
+    <div class="col-lg-6 form-group">
+      <input type="email" class="form-control" name="email" id="email" required placeholder="Enter Email"  title="Only Gmail addresses allowed">
+      <div id="email-feedback" style="margin-top: 5px; font-size: 14px;"></div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="subject" required placeholder="Subject">
+  </div>
+
+  <div class="form-group">
+    <textarea name="message" class="form-control" required placeholder="Message"></textarea>
+  </div>
+
+  <div class="form-btn text-center">
+    <button class="button" type="submit">Send Message</button>
+  </div>
+
+
+<!-- <div id="popup-message" style="display:none; padding: 10px; color: #fff; border-radius: 5px;"></div> -->
+
+</form>
+
+<!-- Popup -->
+<div id="popup-message" style="
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999;">
+</div>
+
+
+
+
+
+
+
+</section>
+    <!-- ====== // Contact Area ====== -->
+
+
+<!-- <section class="pb-70 bg-img fact-counter" id="counter" style="height:10px;background-image: url(' {% static "images/fan-fact-bg.jpg" %}')">
+    </section> -->
+    
+
+
+    <!-- ====== Footer Area ====== -->
+    
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="copyright-text">
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer> 
+    <!-- ====== // Footer Area ====== -->
+
+
+
+
+
+    <script src="{% static 'js/app.js' %}" defer></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/lightbox.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/typed.js' %}"></script>
+    <script src="{% static 'js/skill.bar.js' %}"></script>
+    <script src="{% static 'js/fact.counter.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- <script src="{% static 'js/contact.js' %}"></script> -->
+
+
+
+<style>
+
+    /* Make contact section mobile responsive */
+    @media (max-width: 768px) {
+      .contact-form {
+        padding: 10px !important;
+        margin: 10px auto !important;
+        width: 110% !important;
+        box-shadow: none !important;
+      }
+    
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 16px;
+        width: 100% !important;
+      }
+    
+      .contact-form textarea {
+        resize: vertical;
+      }
+    
+      .contact-form button,
+      .contact-form input[type="submit"] {
+        width: 100% !important;
+        font-size: 16px;
+      }
+    
+      .col-lg-10 {
+        padding: 0 !important;
+        margin: 0 auto !important;
+      }
+    
+      body {
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+      }
+    
+    }
+    
+      
+
+    .alert {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      animation: fadeOut 3s ease-in-out forwards;
+    }
+  
+    .success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+  
+    .error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const popup = document.getElementById("popup-message");
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const emailInput = document.getElementById('email');
+    const feedback = document.getElementById('email-feedback');
+
+    let isSending = false;
+
+    // ✅ Email validation function
+    async function validateEmail(email) {
+      try {
+        const res = await fetch(`/verify-email/?email=${encodeURIComponent(email)}`);
+        const data = await res.json();
+        return data;
+      } catch {
+        return { valid: false, message: "⚠️ Could not verify email." };
+      }
+    }
+
+    // ✅ Form submit
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      if (isSending) return;
+
+      const email = emailInput.value.trim();
+      const result = await validateEmail(email);
+
+      if (!result.valid) {
+        // ❌ Invalid email: show feedback + popup
+        feedback.textContent = result.message;
+        feedback.style.color = "red";
+
+        popup.innerText = "❌ " + result.message;
+        popup.style.backgroundColor = "#dc3545";
+        popup.style.display = "block";
+        setTimeout(() => popup.style.display = "none", 3000);
+
+        // ✅ Make sure form doesn't continue
+        isSending = false;
+        return;
+      }
+
+      // ✅ Email is valid: clear old feedback
+      feedback.textContent = "";
+      feedback.style.color = "";
+
+      // ✅ Send the form
+      isSending = true;
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      popup.innerText = "📤 Sending email...";
+      popup.style.backgroundColor = "#007bff";
+      popup.style.display = "block";
+
+      fetch("{% url 'contact' %}", {
+        method: "POST",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRFToken": formData.get("csrfmiddlewaretoken")
+        },
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        popup.innerText = data.message || "✅ Email sent successfully!";
+        popup.style.backgroundColor = data.status === "success" ? "#28a745" : "#dc3545";
+
+        if (data.status === "success") {
+          form.reset();
+        }
+
+        setTimeout(() => {
+          popup.style.display = "none";
+          submitBtn.disabled = false;
+          isSending = false;
+        }, 3000);
+      })
+      .catch(() => {
+        popup.innerText = "❌ Failed to send email!";
+        popup.style.backgroundColor = "#dc3545";
+        setTimeout(() => {
+          popup.style.display = "none";
+          submitBtn.disabled = false;
+          isSending = false;
+        }, 3000);
+      });
+    });
+
+    // Optional: Clear feedback when typing again
+    emailInput.addEventListener('input', () => {
+      if (feedback.textContent !== "") {
+        feedback.textContent = "";
+        feedback.style.color = "";
+      }
+    });
+  });
+</script> 
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+<!-- *********************************************************************************************************************************** -->
+
 
   {% comment %} <section id="testimonial" style="height:15px;">
         <div class="container bg-white">

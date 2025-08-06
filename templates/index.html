@@ -1,5 +1,4 @@
 {% load static %}
-<!-- {% comment %} {% load messages %} {% endcomment %} -->
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <!DOCTYPE html>
@@ -356,6 +355,7 @@
 
 <section class="pb-70 bg-img fact-counter" id="counter" style="height:10px;background-image: url(' {% static "images/fan-fact-bg.jpg" %}')">
     </section>
+
 
     <section id="technologies" class="section-padding pb-70">
 
@@ -878,226 +878,107 @@
     <!-- ====== // Team Section ====== -->
 
 
-    <!-- ====== Call to Action Area ====== -->
-    {% comment %} <section class="section-padding call-to-action-aria bg-secondary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9    ">
-                    <h2>Lorem ipsum dolor sit amet</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla fugit optio voluptatem modi, nemo, cupiditate vel, aspernatur, quae consequatur officia unde totam.</p>
-                </div>
-                <div class="col-lg-3">
-                    <div class="cta-button">
-                        <div class="d-table">
-                            <div class="d-table-cell">
-                                <a href="#contact" class="button">Contact me</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+
+
+
+
+<!-- ====== Contact Area ====== -->
+<section id="contact" class="section-padding contact-section bg-light">
+  <div class="container">
+    <!-- Section Title -->
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="section-title text-center">
+          <h2>Contact Me</h2>
         </div>
-    </section> {% endcomment %}
-    <!-- ====== // Call to Action Area ====== -->
+      </div>
+    </div>
+    <!-- // Section Title -->
 
 
-    <!-- ====== Pricing Area ====== -->
-    {% comment %} <section class="section-padding pb-70 pricing-area">
-        <div class="container">
-            <!-- Section Title -->
-            <div class="row justify-content-center">
-                <div class="col-lg-6 ">
-                    <div class="section-title text-center">
-                        <h2>Pricing Area</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- //Section Title -->
-            <div class="row">
-                <!-- Single Price Box -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-price-box text-center">
-                        <div class="price-head">
-                            <h2>Basic</h2>
-                            <h3>$99<span>/ Per Month</span></h3>
-                        </div>
-                        <ul>
-                            <li>Basic Feature</li>
-                            <li>Best Output</li>
-                            <li>Free Update</li>
-                            <li>Live chat</li>
-                        </ul>
-                        <a href="#" class="button">PURCHASE NOW</a>
-                    </div>
-                </div>
-                <!-- // Single Price Box -->
-                <!-- Single Price Box -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-price-box text-center">
-                        <div class="price-head">
-                            <h2>Premium</h2>
-                            <h3>$119<span>/ Per Month</span></h3>
-                        </div>
-                        <ul>
-                            <li>Basic Feature</li>
-                            <li>Best Output</li>
-                            <li>Free Update</li>
-                            <li>Live chat</li>
-                        </ul>
-                        <a href="#" class="button">PURCHASE NOW</a>
-                    </div>
-                </div>
-                <!-- // Single Price Box -->
-                <!-- Single Price Box -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-price-box text-center">
-                        <div class="price-head">
-                            <h2>Enterprise</h2>
-                            <h3>$559<span>/ Per Month</span></h3>
-                        </div>
-                        <ul>
-                            <li>Basic Feature</li>
-                            <li>Best Output</li>
-                            <li>Free Update</li>
-                            <li>Live chat</li>
-                        </ul>
-                        <a href="#" class="button">PURCHASE NOW</a>
-                    </div>
-                </div>
-                <!-- // Single Price Box -->
-                <!-- Single Price Box -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-price-box text-center">
-                        <div class="price-head">
-                            <h2>Business</h2>
-                            <h3>$999<span>/ Per Month</span></h3>
-                        </div>
-                        <ul>
-                            <li>Basic Feature</li>
-                            <li>Best Output</li>
-                            <li>Free Update</li>
-                            <li>Live chat</li>
-                        </ul>
-                        <a href="#" class="button">PURCHASE NOW</a>
-                    </div>
-                </div>
-                <!-- // Single Price Box -->
-            </div>
-        </div>
-    </section> {% endcomment %}
-    <!-- ====== // Pricing Area ====== -->
+<form id="contact-form" class="contact-form bg-white" method="POST" action="{% url 'contact' %}">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-lg-6 form-group">
+      <input type="text" class="form-control" name="name" required placeholder="Name">
+    </div>
 
+    <div class="col-lg-6 form-group">
+      <input type="email" class="form-control" name="email" id="email" required placeholder="Enter Email"  title="Only Gmail addresses allowed">
+      <div id="email-feedback" style="margin-top: 5px; font-size: 14px;"></div>
+    </div>
+  </div>
 
-    <!-- ====== Contact Area ====== -->
-    <section id="contact" class="section-padding contact-section bg-light">
-        <div class="container">
-            <!-- Section Title -->
-            <div class="row justify-content-center">
-                <div class="col-lg-6 ">
-                    <div class="section-title text-center">
-                        <h2>Contact Me</h2>
-                        {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> {% endcomment %}
-                    </div>
-                </div>
-            </div>
-            <!-- //Section Title -->
+  <div class="form-group">
+    <input type="text" class="form-control" name="subject" required placeholder="Subject">
+  </div>
 
-            <!-- Contact Form -->
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <!-- Form -->
-                    {% comment %} <form id="contact-form" action="mail.php" method="post" class="contact-form bg-white"> {% endcomment %}
+  <div class="form-group">
+    <textarea name="message" class="form-control" required placeholder="Message"></textarea>
+  </div>
 
-                    {% comment %} <form id="contact-form" action="{% url 'contact' %}" method="post" class="contact-form bg-white"> {% endcomment %}
+  <div class="form-btn text-center">
+    <button class="button" type="submit">Send Message</button>
+  </div>
 
-                    <form id="contact-form" class="contact-form bg-white">
+<!-- <div id="popup-message" style="display:none; padding: 10px; color: #fff; border-radius: 5px;"></div> -->
 
-                            {% csrf_token %}
-                        
-                        <div class="row">
-                            <div class="col-lg-6 form-group">
-                                <input type="text" class="form-control" name="name" required placeholder="Name">
-                            </div>
-                            <div class="col-lg-6 form-group">
-                                <input type="email" class="form-control" name="email" required placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="subject" required placeholder="Subject">
-                        </div>
+</form>
 
-                        <div class="form-group">
-                            <textarea name="message" id="" class="form-control" required placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-btn text-center">
-                            <button class="button" type="submit">Send Message</button>
-
-
-<!-- 
-                            {% comment %} {% if messages %}
-                            <div id="message-box">
-                              {% for message in messages %}
-                                <div class="alert {{ message.tags }}">{{ message }}</div>           
-                              {% endfor %}
-                            </div>
-                          {% endif %}
-                           {% endcomment %}
-
-
-
-                           
-
-                            {% comment %} <p class="form-message"></p> {% endcomment %} -->
-                        </div>
-                    </form>
-                    <!-- // Form -->
-                </div>
-            </div>
-            <!-- // Contact Form -->
-        </div>
-    </section>
-
-                  
-
-    <div id="popup-message" style="
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #28a745;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 9999;
-">
-    Email sent successfully!
+<!-- Popup -->
+<div id="popup-message" style="
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999;">
 </div>
+
+
+
+
+
+
+
+</section>
+
 
     <!-- ====== // Contact Area ====== -->
 
+
+<!-- <section class="pb-70 bg-img fact-counter" id="counter" style="height:10px;background-image: url(' {% static "images/fan-fact-bg.jpg" %}')">
+    </section> -->
+    
+
+
     <!-- ====== Footer Area ====== -->
-     
+    
     <footer class="footer-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="copyright-text">
-                        <!-- <p class="text-white">&copy; 2018 <a href="https://www.begindot.com/">A Template Designed by Begindot</a></p> -->
+                     
                     </div>
                 </div>
             </div>
         </div>
         
-    </footer>
+    </footer> 
     <!-- ====== // Footer Area ====== -->
 
 
 
 
 
-    <script src="{% static 'js/app.js' %}" defer></script>
+    <!-- <script src="{% static 'js/app.js' %}" defer></script> -->
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/lightbox.min.js' %}"></script>
@@ -1108,10 +989,11 @@
     <script src="{% static 'js/skill.bar.js' %}"></script>
     <script src="{% static 'js/fact.counter.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <!-- <script src="{% static 'js/contact.js' %}"></script> -->
+
 
 
 <style>
-
 
     /* Make contact section mobile responsive */
     @media (max-width: 768px) {
@@ -1180,65 +1062,223 @@
   </style>
 
 
+
+
+
+
+
+
+
+
+
+
+
 <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("contact-form");
-        const popup = document.getElementById("popup-message");
-        const submitBtn = form.querySelector('button[type="submit"]');
-        let isSending = false;
+// sending email twice and when 2nd time user enters valid mail..still email canot send?
+
+  // console.log("✔️ Contact form script loaded");
 
 
-    
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-    
-            if (isSending) return;
-            isSending = true;
-            submitBtn.disabled = true;
-    
-            const formData = new FormData(form);
-    
-            popup.innerText = "📤 Sending email...";
-            popup.style.backgroundColor = "#007bff";
-            popup.style.display = "block";
-    
-            fetch("{% url 'contact' %}", {
-                method: "POST",
-                headers: {
-                    "X-Requested-With": "XMLHttpRequest",
-                    "X-CSRFToken": formData.get("csrfmiddlewaretoken")
-                },
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                popup.innerText = data.message || "✅ Email sent successfully!";
-                popup.style.backgroundColor = data.status === "success" ? "#28a745" : "#dc3545";
-    
-                if (data.status === "success") {
-                    form.reset();
-                }
-    
-                setTimeout(() => {
-                    popup.style.display = "none";
-                    isSending = false;
-                    submitBtn.disabled = false;
-                }, 3000);
-            })
-            .catch(() => {
-                popup.innerText = "❌ Failed to send email!";
-                popup.style.backgroundColor = "#dc3545";
-    
-                setTimeout(() => {
-                    popup.style.display = "none";
-                    isSending = false;
-                    submitBtn.disabled = false;
-                }, 3000);
-            });
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const popup = document.getElementById("popup-message");
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const emailInput = document.getElementById('email');
+    const feedback = document.getElementById('email-feedback');
+
+    let isSending = false;
+    let emailValid = false;
+
+    // ✅ Function to verify email using your API
+    async function checkEmail(email) {
+      try {
+        const res = await fetch(`/verify-email/?email=${encodeURIComponent(email)}`);
+        const data = await res.json();
+        return data;
+      } catch {
+        return { valid: false, message: "⚠️ Could not verify email." };
+      }
+    }
+
+    // ✅ Check email only on form submit
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      if (isSending) return;
+
+      const email = emailInput.value.trim();
+      const result = await checkEmail(email);
+      emailValid = result.valid;
+
+      if (!emailValid) {
+        feedback.textContent = result.message;
+        feedback.style.color = "red";
+
+        popup.innerText = "❌ " + result.message;
+        popup.style.backgroundColor = "#dc3545";
+        popup.style.display = "block";
+
+        setTimeout(() => popup.style.display = "none", 3000);
+        return;
+      }
+
+      // ✅ Proceed to send email
+      isSending = true;
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      popup.innerText = "📤 Sending email...";
+      popup.style.backgroundColor = "#007bff";
+      popup.style.display = "block";
+
+      fetch("{% url 'contact' %}", {
+        method: "POST",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRFToken": formData.get("csrfmiddlewaretoken")
+        },
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          popup.innerText = data.message || "✅ Email sent successfully!";
+          popup.style.backgroundColor = data.status === "success" ? "#28a745" : "#dc3545";
+
+          if (data.status === "success") form.reset();
+
+          setTimeout(() => {
+            popup.style.display = "none";
+            submitBtn.disabled = false;
+            isSending = false;
+          }, 3000);
+        })
+        .catch(() => {
+          popup.innerText = "❌ Failed to send email!";
+          popup.style.backgroundColor = "#dc3545";
+          setTimeout(() => {
+            popup.style.display = "none";
+            submitBtn.disabled = false;
+            isSending = false;
+          }, 3000);
         });
     });
-    </script>
+  });
+</script>
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    const popup = document.getElementById("popup-message");
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const emailInput = document.getElementById('email');
+    const feedback = document.getElementById('email-feedback');
+
+    let isSending = false;
+
+    // ✅ Email validation function
+    async function validateEmail(email) {
+      try {
+        const res = await fetch(`/verify-email/?email=${encodeURIComponent(email)}`);
+        const data = await res.json();
+        return data;
+      } catch {
+        return { valid: false, message: "⚠️ Could not verify email." };
+      }
+    }
+
+    // ✅ Form submit
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      if (isSending) return;
+
+      const email = emailInput.value.trim();
+      const result = await validateEmail(email);
+
+      if (!result.valid) {
+        // ❌ Invalid email: show feedback + popup
+        feedback.textContent = result.message;
+        feedback.style.color = "red";
+
+        popup.innerText = "❌ " + result.message;
+        popup.style.backgroundColor = "#dc3545";
+        popup.style.display = "block";
+        setTimeout(() => popup.style.display = "none", 3000);
+
+        // ✅ Make sure form doesn't continue
+        isSending = false;
+        return;
+      }
+
+      // ✅ Email is valid: clear old feedback
+      feedback.textContent = "";
+      feedback.style.color = "";
+
+      // ✅ Send the form
+      isSending = true;
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      popup.innerText = "📤 Sending email...";
+      popup.style.backgroundColor = "#007bff";
+      popup.style.display = "block";
+
+      fetch("{% url 'contact' %}", {
+        method: "POST",
+        headers: {
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRFToken": formData.get("csrfmiddlewaretoken")
+        },
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        popup.innerText = data.message || "✅ Email sent successfully!";
+        popup.style.backgroundColor = data.status === "success" ? "#28a745" : "#dc3545";
+
+        if (data.status === "success") {
+          form.reset();
+        }
+
+        setTimeout(() => {
+          popup.style.display = "none";
+          submitBtn.disabled = false;
+          isSending = false;
+        }, 3000);
+      })
+      .catch(() => {
+        popup.innerText = "❌ Failed to send email!";
+        popup.style.backgroundColor = "#dc3545";
+        setTimeout(() => {
+          popup.style.display = "none";
+          submitBtn.disabled = false;
+          isSending = false;
+        }, 3000);
+      });
+    });
+
+    // Optional: Clear feedback when typing again
+    emailInput.addEventListener('input', () => {
+      if (feedback.textContent !== "") {
+        feedback.textContent = "";
+        feedback.style.color = "";
+      }
+    });
+  });
+</script> -->
+
+
+
+
 
 
 </body>

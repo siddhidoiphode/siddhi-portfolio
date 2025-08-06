@@ -99,13 +99,25 @@
                 url: $(form).attr('action'),
                 data: formData
             })
+
+
+            // .done(function (response) {
+            //     $(formMessages).removeClass('error');
+            //     $(formMessages).addClass('success');
+            //     $(formMessages).text(response);
+
+            //     $('#contact-form input,#contact-form textarea').val('');
+            // })
+
             .done(function (response) {
                 $(formMessages).removeClass('error');
                 $(formMessages).addClass('success');
-                $(formMessages).text(response);
+                $(formMessages).text(response.message); // ✅ Access the message key
 
-                $('#contact-form input,#contact-form textarea').val('');
+                $('#contact-form input, #contact-form textarea').val('');
             })
+
+
             .fail(function (data) {
                 $(formMessages).removeClass('success');
                 $(formMessages).addClass('error');
